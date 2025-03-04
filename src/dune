@@ -1,0 +1,9 @@
+(executable
+ (name main)
+ (public_name Projeto_ETL)
+ (libraries
+   csv       
+   sqlite3   
+   threads   
+ )
+ (modules :standard))
