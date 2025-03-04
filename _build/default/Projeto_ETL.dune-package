@@ -1,4 +1,0 @@
-(lang dune 3.17)
-(name Projeto_ETL)
-(sections (lib .) (bin ../../bin) (doc ../../doc/Projeto_ETL))
-(files (lib (META dune-package opam)) (bin (Projeto_ETL)) (doc (README.md)))
