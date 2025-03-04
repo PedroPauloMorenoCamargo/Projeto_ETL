@@ -1,9 +1,11 @@
 (executable
  (name main)
  (public_name Projeto_ETL)
+ 
  (libraries
    csv       
    sqlite3   
    threads   
+   domain
  )
- (modules :standard))
+ (modules main))

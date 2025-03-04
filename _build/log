@@ -1,0 +1,22 @@
+# dune build
+# OCAMLPARAM: unset
+# Shared cache: enabled-except-user-rules
+# Shared cache location: /home/ppmca/.cache/dune/db
+# Workspace root: /home/ppmca/Desktop/Insper/Programacao_Funcional/Projeto_ETL
+# Auto-detected concurrency: 32
+# Dune context:
+#  { name = "default"
+#  ; kind = "default"
+#  ; profile = Dev
+#  ; merlin = true
+#  ; fdo_target_exe = None
+#  ; build_dir = In_build_dir "default"
+#  ; instrument_with = []
+#  }
+$ /usr/bin/ocamlc.opt -config > /tmp/dune_ac1820_output
+$ (cd _build/default && /usr/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -I src/.main.eobjs/byte -I src/.main.eobjs/native -I /home/ppmca/.opam/default/lib/bytes -I /home/ppmca/.opam/default/lib/csv -I /home/ppmca/.opam/default/lib/sqlite3 -I /usr/lib/ocaml/threads -I src/pure/.domain.objs/byte -I src/pure/.domain.objs/native -intf-suffix .ml -no-alias-deps -opaque -o src/.main.eobjs/native/dune__exe__Main.cmx -c -impl src/main.ml)
+> File "src/main.ml", line 1, characters 0-11:
+> 1 | open Domain
+>     ^^^^^^^^^^^
+> Error (warning 33 [unused-open]): unused open Domain.
+[2]
