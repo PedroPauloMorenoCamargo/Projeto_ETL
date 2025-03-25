@@ -1,10 +1,10 @@
+(library
+ (name projeto_etl_lib)
+ (modules io types transforms)
+ (libraries csv sqlite3 curl))
+
 (executable
  (name main)
- (public_name Projeto_ETL)
- 
- (libraries
-   csv       
-   sqlite3   
-   threads 
- )
- (modules :standard Types))
+  (public_name Projeto_ETL)
+ (modules main)
+ (libraries projeto_etl_lib))
