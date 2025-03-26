@@ -1,9 +1,10 @@
-(** Record que representa uma encomenda na tabela Orders 
-  @param id Chave primária do pedido 
-  @param cliente_id ID do cliente 
-  @param order_date Data da encomenda em formato string (AAAA-MM-DD) 
-  @param status Status da encomenda: Pending | Complete | Cancelled
-  @param origin 'P' para physical, 'O' para online 
+(** 
+  record que representa um pedido na tabela order
+  @param id chave primária do pedido 
+  @param cliente_id id do cliente 
+  @param order_date data do pedido em formato string (AAAA-MM-DD) 
+  @param status status do pedido: pending | complete | cancelled
+  @param origin 'p' para physical, 'o' para online 
 *)
 type order = {
   id : int;                  
@@ -13,12 +14,13 @@ type order = {
   origin : string;
 }
 
-(** Record que epresenta um item de um pedido na tabela OrderItem .
-  @param order_id Chave estrangeira para uma encomenda.
-  @param product_id Produto que está sendo vendido. 
-  @param quantity Quantidade comprada.
-  @param price Preço do produto.  
-  @param tax Imposto em formato percentual.
+(** 
+  record que epresenta um item de um pedido na tabela orderitem .
+  @param order_id chave estrangeira para um pedido.
+  @param product_id produto que está sendo vendido. 
+  @param quantity quantidade comprada.
+  @param price preço do produto.  
+  @param tax imposto em formato percentual.
 *)
 type order_item = {
   order_id : int;   
@@ -28,9 +30,10 @@ type order_item = {
   tax : float;
 }
 
-(** Helper que converte uma lista de strings em um Record {!order}. Lança exceção em caso de formato inválido. 
-  @param row Linha do CSV contendo uma encomenda.
-  @return Uma encomenda.
+(** 
+  helper que converte uma lista de strings em um record {!Order}. Lança exceção em caso de formato inválido. 
+  @param row linha do CSV contendo um pedido.
+  @return um pedido.
 *)
 let order_of_csv_row (row : string list) : order =
   match row with
@@ -45,9 +48,10 @@ let order_of_csv_row (row : string list) : order =
   | _ ->
       failwith "Linha de Order CSV inválida: número de colunas incorreto."
 
-(** Helper que converte uma lista de strings em um Record {!order_item}. Lança exceção em caso de formato inválido.
-  @param row Linha do CSV contendo um item de uma encomenda.
-  @return Um item de encomenda.
+(** 
+  helper que converte uma lista de strings em um record {!Order_item}. Lança exceção em caso de formato inválido.
+  @param row linha do CSV contendo um item de um pedido.
+  @return um item de pedido.
 *)
 let order_item_of_csv_row (row : string list) : order_item =
   match row with
