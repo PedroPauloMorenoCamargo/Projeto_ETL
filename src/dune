@@ -1,6 +1,6 @@
 (library
  (name projeto_etl_lib)
- (modules io types transforms)
+ (modules impure types pure)
  (libraries csv sqlite3 curl))
 
 (executable

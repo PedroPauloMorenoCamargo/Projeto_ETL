@@ -1,6 +1,6 @@
 (** Importa as funções puras [Pure] e impuras[Impure] *)
-open Projeto_etl_lib.Io
-open Projeto_etl_lib.Transforms
+open Projeto_etl_lib.Pure
+open Projeto_etl_lib.Impure
 
 let () =
   (* 1. extração de dados*) 
