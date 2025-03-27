@@ -35,7 +35,7 @@ Cria e preenche tabelas no SQLite:
 - **Média Meses** (média de faturamento e impostos por mês)
 - **Média Anos** (média de faturamento e impostos por ano)
 
-![Pipeline](img/pipeline.png)
+
 ---
 
 ## Metodologia
@@ -93,7 +93,6 @@ A transformação de dados envolve três etapas principais:
 - Cálculo de **faturamento (valor total)** e **impostos pagos** de cada pedido.  
 - Cálculo da **média de faturamento** e **média de impostos pagos** por mês e por ano.
 
-![Pipeline2](img/pipeline2.png)
 ---
 
 ## Carregamento dos Dados
