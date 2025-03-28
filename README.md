@@ -169,9 +169,10 @@ SELECT * FROM média_anos;
 
 O projeto utilizou **IA** para:
 
-- Criar a **estrutura do Dune**
+- Criar a estrutura **Dune** do projeto
 - Verificar exemplos funcionais das bibliotecas usadas como SQLite, CSV e CURL
 - Exemplos de como usar um Dicionário `Map(String)`
-- Deixar os **comentários e o texto do relatório mais claros e objetivos**
+- Deixar os **comentários** e o **texto** do relatório mais claros e objetivos
 - Explicar o funcionamento de **Docstring**
 - Em alguns casos, **sugerir entradas e saídas para funções** (ex: `join` ter uma tupla como saída)
+- Implementação de funcionalidades, resolução de bugs, e refatoração de código
