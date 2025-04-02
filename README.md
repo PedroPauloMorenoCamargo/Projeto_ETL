@@ -110,14 +110,16 @@ Por fim, são criadas e preenchidas as seguintes tabelas em um banco de dados SQ
 - **Média Meses**: armazena, para cada mês (formato `YYYY-MM`), a média de faturamento e de impostos por pedido.
 - **Média Anos**: armazena, para cada ano (formato `YYYY`), a média de faturamento e de impostos por pedido.
 
+
+> Vale ressaltar que **cada execução apaga a tabela anterior e cria outra nova**, ou seja, não há atualização de tabelas prévias.
+
+
 Além do banco de dados SQLite, os dados também são exportados automaticamente para arquivos CSV:
 
 - `result_revenue_tax.csv`
 - `mean_months.csv`
 - `mean_years.csv`
 
-
-> Vale ressaltar que **cada execução apaga a tabela anterior e cria outra nova**, ou seja, não há atualização de tabelas prévias.
 
 ---
 
