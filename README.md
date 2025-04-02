@@ -205,6 +205,4 @@ antes de iniciar a etapa de Transform.
 - [x] 5 Documentar todas as funções geradas via formato docstring .
 - [x] 6 Realizar uma saída adicional que contém a média de receita e impostos pagos agrupados por
 mês e ano.
-- [] 7 Gerar arquivos de testes completos para as funções puras.
-
 ---
