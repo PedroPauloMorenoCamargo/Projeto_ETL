@@ -3,9 +3,9 @@
 **ETL** é um acrônimo para **Extract, Transform, Load** (Extração, Transformação e Carregamento).  
 A proposta do projeto é processar duas tabelas (chamadas `order` e `orderItem`) disponibilizadas em arquivos CSV separados e transformá-las em três tabelas diferentes:
 
-- **Faturamento Pedidos**
-- **Média Meses**
-- **Média Anos**
+- `Faturamento Pedidos`
+- `Média Meses`
+- `Média Anos`
 
 Além disso, o projeto possibilita **filtragem dos pedidos por origem ou status** antes de gerar as tabelas finais, permitindo focar em cenários específicos.
 
@@ -31,9 +31,15 @@ Abaixo está a visão geral da pipeline do projeto:
 
 Cria e preenche tabelas no SQLite:
 
-- **Faturamento Pedidos** (informações de cada pedido e seus valores de faturamento e impostos)
-- **Média Meses** (média de faturamento e impostos por mês)
-- **Média Anos** (média de faturamento e impostos por ano)
+- `Faturamento Pedidos` (informações de cada pedido e seus valores de faturamento e impostos)
+- `Média Meses` (média de faturamento e impostos por mês)
+- `Média Anos` (média de faturamento e impostos por ano)
+
+Além do banco de dados SQLite, os dados também são exportados automaticamente para arquivos CSV:
+
+- `result_revenue_tax.csv`
+- `mean_months.csv`
+- `mean_years.csv`
 
 ![Pipeline Geral](img/pipeline.png)
 ---
@@ -104,6 +110,13 @@ Por fim, são criadas e preenchidas as seguintes tabelas em um banco de dados SQ
 - **Média Meses**: armazena, para cada mês (formato `YYYY-MM`), a média de faturamento e de impostos por pedido.
 - **Média Anos**: armazena, para cada ano (formato `YYYY`), a média de faturamento e de impostos por pedido.
 
+Além do banco de dados SQLite, os dados também são exportados automaticamente para arquivos CSV:
+
+- `result_revenue_tax.csv`
+- `mean_months.csv`
+- `mean_years.csv`
+
+
 > Vale ressaltar que **cada execução apaga a tabela anterior e cria outra nova**, ou seja, não há atualização de tabelas prévias.
 
 ---
@@ -161,6 +174,13 @@ Cheque os resultados:
 SELECT * FROM faturamento_pedidos;
 SELECT * FROM média_meses;
 SELECT * FROM média_anos;
+```
+Os resultados também estão disponíveis em arquivos CSV para fácil visualização ou uso em outros sistemas:
+
+```bash
+csv_out/result_revenue_tax.csv
+csv_out/mean_months.csv
+csv_out/mean_years.csv
 ```
 
 ---
