@@ -67,12 +67,19 @@ let merge_amount_taxes (data : (order * order_item list) list) : (int * float * 
 module StringMap = Map.Make(String)
 
 (** 
-  agrupa os pedidos por um intervalo de tempo (ano, mês, etc.) determinado, e calcula a média de faturamento e impostos pagos por período.
-  passo-a-passo: agrupa os pedidos -> acumula os valores -> calcula as médias.
-  @param data lista de tuplas (pedido, itens do pedido).
-  @param n quantidade de caracteres iniciais da data usados para agrupamento (ex: n=4 para ano, n=7 para mês).
-  @return lista de tuplas (data agrupada, faturamento médio, imposto médio).
+  agrupa pedidos por um intervalo de tempo (como ano ou ano-mês) e calcula, para cada grupo,
+  a média de faturamento e de impostos pagos.
+  Passo-a-passo:
+  1. Para cada pedido, extrai um prefixo da data (ex: "2024" ou "2024-08") e calcula o total de faturamento e impostos.
+  2. Agrupa os pedidos com o mesmo prefixo de data.
+  3. Acumula os valores de faturamento e impostos por grupo.
+  4. Calcula as médias dividindo os totais pela quantidade de pedidos em cada grupo.
+  @param data lista de tuplas, cada uma contendo um pedido e sua lista de itens.
+  @param n número de caracteres iniciais da data usados para o agrupamento 
+           (ex: n = 4 agrupa por ano, n = 7 agrupa por ano-mês).
+  @return lista de tuplas no formato (data agrupada, faturamento médio, imposto médio pago).
 *)
+
 let dates_mean (data : (order * order_item list) list) (n: int) : (string * float * float) list=
   let join_months = List.map( fun (ord, it) ->
     let total_amt, total_tax = acc_amt_tax it in
