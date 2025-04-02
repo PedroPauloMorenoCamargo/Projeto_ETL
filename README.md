@@ -127,17 +127,21 @@ Além do banco de dados SQLite, os dados também são exportados automaticamente
 
 ### Execução
 
-1. Rode o servidor Python:  
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/PedroPauloMorenoCamargo/Projeto_ETL.git
+   
+2. Rode na raíz do projeto o servidor Python:  
    ```bash
    python3 /servidor_csv/server.py
    ```
 
-2. Compile o projeto usando Dune:  
+3. Compile o projeto usando Dune:  
    ```bash
    dune build
    ```
 
-3. Rode o executável gerado:  
+4. Rode o executável gerado:  
    ```bash
    dune exec Projeto_ETL
    ```
