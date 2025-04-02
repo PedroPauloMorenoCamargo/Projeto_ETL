@@ -30,4 +30,8 @@ let () =
   ignore (load_months database mean_months);
   ignore (load_years database mean_year);
   ignore(Sqlite3.db_close database);
+  (* 6. salvando resultados em CSV *)
+  write_result_revenue_tax_to_csv "csv_out/result_revenue_tax.csv" result_revenue_tax;
+  write_dates_mean_to_csv "csv_out/mean_months.csv" mean_months;
+  write_dates_mean_to_csv "csv_out/mean_years.csv" mean_year;
   

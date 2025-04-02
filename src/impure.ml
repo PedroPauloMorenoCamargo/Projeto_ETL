@@ -75,6 +75,39 @@ let fetch_content_from_http (url : string) : string =
   Curl.cleanup connection;
   Buffer.contents buffer
 
+
+
+(** 
+  escreve uma lista de tuplas (id, amount, tax) em um csv.
+  @param filename nome do arquivo csv de saída.
+  @param data lista de tuplas (int * float * float).
+*)
+let write_result_revenue_tax_to_csv (filename : string) (data : (int * float * float) list) : unit =
+  let oc = open_out filename in
+  (* Cabeçalho do CSV *)
+  Printf.fprintf oc "id,amount,tax\n";
+  (* Linhas de dados *)
+  List.iter (fun (id, amount, tax) ->
+    Printf.fprintf oc "%d,%.2f,%.2f\n" id amount tax
+  ) data;
+  close_out oc
+
+(** 
+  escreve uma lista de tuplas (string, amount, tax) em um csv.
+  esta função pode ser utilizada tanto para meses quanto para anos.
+  @param filename nome do arquivo  de saída.
+  @param data lista de tuplas (string * float * float).
+*)
+let write_dates_mean_to_csv (filename : string) (data : (string * float * float) list) : unit =
+  let oc = open_out filename in
+  Printf.fprintf oc "date,amount_mean,tax_mean\n";
+  List.iter (fun (date_str, amount, tax) ->
+    Printf.fprintf oc "%s,%.2f,%.2f\n" date_str amount tax
+  ) data;
+  close_out oc
+
+
+
 (** 
   cria uma tabela para o faturamento dos pedidos e preenche a tabela com os valores recebidos
   passo-a-passo: apaga tabela se preciso -> cria tabela nova -> insere as linhas na tabela
@@ -181,3 +214,5 @@ let load_years (connection : Sqlite3.db) (data : (string * float * float) list) 
     | rc -> failwith ("Erro ao inserir no SQLite: " ^ Sqlite3.Rc.to_string rc)
   ) data;
   ignore(Sqlite3.finalize insert_statement);
+
+
