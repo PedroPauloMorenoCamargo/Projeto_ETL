@@ -183,22 +183,28 @@ O projeto utilizou **IA** para:
 
 ### Project Requirements
 
-- [x] 1 The project must be implemented in OCaml.
-- [x] 2 To compute the output, it is necessary to use `map`, `reduce`, and `filter`.
-- [x] 3 The code must include functions for reading and writing CSV files. This will result in impure functions.
-- [x] 4 Separate impure functions from pure functions in the project files.
-- [x] 5 The input must be loaded into a list structure of `Record`.
-- [x] 6 The use of `Helper Functions` is mandatory for loading fields into a `Record`.
-- [x] 7 A project report must be written, explaining how each step was implemented. This serves as a guide for someone who might want to replicate the project in the future. You must declare whether or not Generative AI was used in this report.
+- [x] 1 O projeto precisa ser feito em OCaml.
+- [x] 2 Para calcular a saída, é necessário utilizar map , reduce e filter .
+- [x] 3 O código deve conter funções para leitura e escrita de arquivos CSV. Isso gerará funções
+impuras.
+- [x] 4 Separar as funções impuras das funções puras nos arquivos do projeto.
+- [x] 5 A entrada precisa ser carregada em uma estrutura de lista de Records .
+- [x] 6 É obrigatório o uso de Helper Functions para carregar os campos em um Record .
+- [x] 7 É necessário escrever um relatório do projeto, indicando como as etapas foram construídas. Isso
+é semelhante a um roteiro para alguém que iria refazer o projeto no futuro. Você deve declarar o
+uso ou não de IA Generativa nesse relatório.parar as funções impuras das funções puras nos arquivos do projeto.
 
 ### Optional Requirements
 
-- [x] 1 Read the input data from a static file available on the internet (exposed via HTTP).
-- [x] 2 Save the output data in an SQLite database.
-- [x] 3 It is possible to process input tables separately, but it is preferable to process the data together using an `inner join` operation. In other words, join the tables before starting the `Transform` step.
-- [x] 4 Organize the ETL project using `dune`.
-- [x] 5 Document all generated functions using the `docstring` format.
-- [x] 6 Produce an additional output that contains the average revenue and taxes paid, grouped by month and year.
-- [] 7 Generate complete test files for the pure functions.
+- [x] 1 Ler os dados de entrada em um arquivo estático na internet (exposto via http).
+- [x] 2 Salvar os dados de saída em um Banco de Dados SQLite.
+- [x] 3 É possível fazer fazer o tratamento das tabelas de entrada em separado. Mas é desejável realizar
+o tratamento dos dados conjuntamente via operação de inner join . Ou seja, juntar as tabelas
+antes de iniciar a etapa de Transform.
+- [x] 4 Organizar o projeto ETL utilizando dune .
+- [x] 5 Documentar todas as funções geradas via formato docstring .
+- [x] 6 Realizar uma saída adicional que contém a média de receita e impostos pagos agrupados por
+mês e ano.
+- [] 7 Gerar arquivos de testes completos para as funções puras.
 
 ---
