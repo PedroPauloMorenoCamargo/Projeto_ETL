@@ -176,3 +176,29 @@ O projeto utilizou **IA** para:
 - Explicar o funcionamento de **Docstring**
 - Em alguns casos, **sugerir entradas e saídas para funções** (ex: `join` ter uma tupla como saída)
 - Implementação de funcionalidades, resolução de bugs, e refatoração de código
+
+---
+
+## Roadmap
+
+### Project Requirements
+
+- [x] 1 The project must be implemented in OCaml.
+- [x] 2 To compute the output, it is necessary to use `map`, `reduce`, and `filter`.
+- [x] 3 The code must include functions for reading and writing CSV files. This will result in impure functions.
+- [x] 4 Separate impure functions from pure functions in the project files.
+- [x] 5 The input must be loaded into a list structure of `Record`.
+- [x] 6 The use of `Helper Functions` is mandatory for loading fields into a `Record`.
+- [x] 7 A project report must be written, explaining how each step was implemented. This serves as a guide for someone who might want to replicate the project in the future. You must declare whether or not Generative AI was used in this report.
+
+### Optional Requirements
+
+- [x] 1 Read the input data from a static file available on the internet (exposed via HTTP).
+- [x] 2 Save the output data in an SQLite database.
+- [x] 3 It is possible to process input tables separately, but it is preferable to process the data together using an `inner join` operation. In other words, join the tables before starting the `Transform` step.
+- [x] 4 Organize the ETL project using `dune`.
+- [x] 5 Document all generated functions using the `docstring` format.
+- [x] 6 Produce an additional output that contains the average revenue and taxes paid, grouped by month and year.
+- [] 7 Generate complete test files for the pure functions.
+
+---
